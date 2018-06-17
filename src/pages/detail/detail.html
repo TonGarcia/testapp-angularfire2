@@ -5,14 +5,30 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>Detail</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>
+      {{ song.songName }}
+    </ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
+  <h3> Artist </h3>
+  <p>
+    The song {{ song.songName }} was released by {{ song.artistName }}.
+  </p>
 
+  <h3> Album </h3>
+  <p>
+    It was part of the {{ song.albumName }} album.
+  </p>
+
+  <h3> Description </h3>
+  <p>
+    {{ song.songDescription }}
+  </p>
+
+  <button ion-button block (click)="deleteSong(song.id, song.songName)">
+    DELETE SONG
+  </button>
 </ion-content>

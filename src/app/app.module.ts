@@ -12,13 +12,15 @@ import {AngularFirestoreModule} from "angularfire2/firestore";
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { CreatePage } from '../pages/create/create';
+import {DetailPage} from '../pages/detail/detail';
 import { FirestoreProvider } from '../providers/firestore/firestore';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    CreatePage
+    CreatePage,
+    DetailPage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import { FirestoreProvider } from '../providers/firestore/firestore';
   entryComponents: [
     MyApp,
     HomePage,
-    CreatePage
+    CreatePage,
+    DetailPage
   ],
   providers: [
     StatusBar,

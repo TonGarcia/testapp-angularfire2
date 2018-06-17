@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Song } from '../../models/song.interface';
 
 @Injectable()
@@ -23,6 +23,15 @@ export class FirestoreProvider {
         songName,
       }
     );
-    
+
   }
+
+  getSongList(): AngularFirestoreCollection<Song> {
+    return this.firestore.collection(`songList`);
+  }
+
+  deleteSong(songId: string): Promise<void> {
+    return this.firestore.doc(`songList/${songId}`).delete();
+  }
+
 }

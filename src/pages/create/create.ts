@@ -24,7 +24,7 @@ import { FirestoreProvider } from '../../providers/firestore/firestore';
 })
 export class CreatePage {
 
-  // public createSongForm: FormGroup; // This is the form we're creating.
+  public createSongForm: FormGroup; // This is the form we're creating.
 
   constructor(
     public navCtrl: NavController,

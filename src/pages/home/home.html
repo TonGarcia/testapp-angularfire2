@@ -11,9 +11,13 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <ion-card *ngFor="let song of songList | async" (click)="detail(song)">
+      <ion-card-header>
+        {{ song.songName }}
+      </ion-card-header>
+      <ion-card-content>
+        Artist Name: {{ song.artistName }}
+      </ion-card-content>
+    </ion-card>
 </ion-content>
