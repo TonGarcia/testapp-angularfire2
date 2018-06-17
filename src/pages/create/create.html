@@ -1,0 +1,52 @@
+<!--
+  Generated template for the CreatePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Create</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <form [formGroup]="createSongForm" (submit)="createSong()" novalidate>
+    <ion-item>
+      <ion-label stacked>Song Name</ion-label>
+      <ion-input formControlName="songName" type="text"
+        placeholder="What's this song called?">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Artist Name</ion-label>
+      <ion-input formControlName="artistName" type="text"
+        placeholder="Who sings this song?">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Album Name</ion-label>
+      <ion-input formControlName="albumName" type="text"
+        placeholder="What's the album's name?">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Song Description</ion-label>
+      <ion-textarea formControlName="songDescription" type="text"
+        placeholder="What's this song about?">
+      </ion-textarea>
+    </ion-item>
+
+
+    <button ion-button block type="submit" [disabled]="!createSongForm.valid">
+      Add Song
+    </button>
+  </form>
+
+</ion-content>
